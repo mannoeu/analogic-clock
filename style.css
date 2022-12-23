@@ -1,0 +1,258 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  outline: 0;
+}
+
+:root {
+  --dark: #2f3542;
+  --gray: #bdc3c7;
+  --red: #e74c3c;
+  --light: #ecf0f1;
+}
+
+body,
+html {
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  display: grid;
+  place-items: center;
+  background: var(--dark);
+}
+
+div.clock {
+  width: 300px;
+  height: 300px;
+  border-radius: 50%;
+  background: var(--light);
+  position: relative;
+  padding: 5px;
+  overflow: hidden;
+}
+
+div.clock:after {
+  content: "";
+  display: block;
+  padding: 4px;
+  background: var(--red);
+  border-radius: 50%;
+  border: 2px solid var(--dark);
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 150;
+}
+
+div.clock div.hours {
+  border-radius: 8px 8px 0px 0px;
+  width: 6px;
+  height: 70px;
+  border: 3px solid var(--dark);
+  transform-origin: 50% 100%;
+  position: absolute;
+  bottom: 150px;
+  left: 147px;
+  z-index: 100;
+}
+
+div.clock div.minutes {
+  border-radius: 4px;
+  width: 4px;
+  height: 110px;
+  background: var(--dark);
+  transform-origin: 50% 100%;
+  position: absolute;
+  bottom: 150px;
+  left: 150px;
+  z-index: 100;
+}
+
+div.clock div.seconds {
+  border-radius: 2px;
+  width: 2px;
+  height: 110px;
+  background: var(--red);
+  transform-origin: 50% 80%;
+  position: absolute;
+  bottom: 150px;
+  left: 150px;
+  z-index: 100;
+}
+
+div.markers span.line {
+  width: 1px;
+  height: 100%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform-origin: center;
+  font-size: 1rem;
+  font-family: "Roboto", sans-serif;
+  z-index: 50;
+}
+
+/* ------------------------------------ */
+div.markers span.line.marker1 {
+  transform: translate(-50%, -50%) rotate(0deg);
+  background: linear-gradient(
+    0deg,
+    var(--light),
+    rgba(0, 0, 0, 0.15),
+    var(--gray),
+    rgba(0, 0, 0, 0.15),
+    var(--light)
+  );
+}
+div.markers span.line.marker1:after {
+  content: "12";
+  background: var(--light);
+  padding: 5px;
+  display: block;
+  left: 50%;
+  top: 5px;
+  transform: translateX(-50%);
+  position: absolute;
+}
+div.markers span.line.marker1:before {
+  content: "6";
+  background: var(--light);
+  padding: 5px;
+  display: block;
+  left: 50%;
+  bottom: 5px;
+  transform: translateX(-50%);
+  position: absolute;
+}
+/* ------------------------------------ */
+
+div.markers span.line.marker2 {
+  transform: translate(-50%, -50%) rotate(30deg);
+  background: linear-gradient(30deg, var(--light), var(--gray), var(--light));
+}
+div.markers span.line.marker2:after {
+  content: "1";
+  background: var(--light);
+  padding: 10px;
+  display: block;
+  left: 50%;
+  top: 0px;
+  transform: translateX(-50%) rotate(-30deg);
+  position: absolute;
+}
+div.markers span.line.marker2:before {
+  content: "7";
+  background: var(--light);
+  padding: 10px;
+  display: block;
+  left: 50%;
+  bottom: 0;
+  transform: translateX(-50%) rotate(-30deg);
+  position: absolute;
+}
+/* ------------------------------------ */
+
+div.markers span.line.marker3 {
+  transform: translate(-50%, -50%) rotate(60deg);
+  background: linear-gradient(60deg, var(--light), var(--gray), var(--light));
+}
+div.markers span.line.marker3:after {
+  content: "2";
+  background: var(--light);
+  padding: 10px;
+  display: block;
+  left: 50%;
+  top: 0;
+  transform: translateX(-50%) rotate(-60deg);
+  position: absolute;
+}
+div.markers span.line.marker3:before {
+  content: "8";
+  background: var(--light);
+  padding: 10px;
+  display: block;
+  left: 50%;
+  bottom: 0;
+  transform: translateX(-50%) rotate(-60deg);
+  position: absolute;
+}
+/* ------------------------------------ */
+
+div.markers span.line.marker4 {
+  transform: translate(-50%, -50%) rotate(90deg);
+  background: linear-gradient(90deg, var(--light), var(--gray), var(--light));
+}
+div.markers span.line.marker4:after {
+  content: "3";
+  background: var(--light);
+  padding: 10px;
+  display: block;
+  left: 50%;
+  top: 0;
+  transform: translateX(-50%) rotate(-90deg);
+  position: absolute;
+}
+div.markers span.line.marker4:before {
+  content: "9";
+  background: var(--light);
+  padding: 10px;
+  display: block;
+  left: 50%;
+  bottom: 0;
+  transform: translateX(-50%) rotate(-90deg);
+  position: absolute;
+}
+/* ------------------------------------ */
+
+div.markers span.line.marker5 {
+  transform: translate(-50%, -50%) rotate(120deg);
+  background: linear-gradient(120deg, var(--light), var(--gray), var(--light));
+}
+div.markers span.line.marker5:after {
+  content: "4";
+  background: var(--light);
+  padding: 10px;
+  display: block;
+  left: 50%;
+  top: 0;
+  transform: translateX(-50%) rotate(-120deg);
+  position: absolute;
+}
+div.markers span.line.marker5:before {
+  content: "10";
+  background: var(--light);
+  padding: 10px;
+  display: block;
+  left: 50%;
+  bottom: 0;
+  transform: translateX(-50%) rotate(-120deg);
+  position: absolute;
+}
+/* ------------------------------------ */
+
+div.markers span.line.marker6 {
+  transform: translate(-50%, -50%) rotate(150deg);
+  background: linear-gradient(150deg, var(--light), var(--gray), var(--light));
+}
+div.markers span.line.marker6:after {
+  content: "5";
+  background: var(--light);
+  padding: 10px;
+  display: block;
+  left: 50%;
+  top: 0;
+  transform: translateX(-50%) rotate(-150deg);
+  position: absolute;
+}
+div.markers span.line.marker6:before {
+  content: "11";
+  background: var(--light);
+  padding: 10px;
+  display: block;
+  left: 50%;
+  bottom: 0;
+  transform: translateX(-50%) rotate(-150deg);
+  position: absolute;
+}
